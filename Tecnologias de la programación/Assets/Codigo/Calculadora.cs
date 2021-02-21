@@ -15,6 +15,10 @@ public class Calculadora : MonoBehaviour
     int i = 0;
     double resultado;
     bool DisplayResultado = false;
+    string temp = "";
+    double Arg;
+    double temp1, temp2;
+    bool num1 = true;
 
     public void Buttons()
     {
@@ -26,51 +30,71 @@ public class Calculadora : MonoBehaviour
             DisplayResultado = false;
         }
 
-        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
-
         string buttonValue = EventSystem.current.currentSelectedGameObject.name;
 
         InputString += buttonValue;
 
-        double Arg;
+
 
         if (double.TryParse(buttonValue, out Arg))
         {
-                if (i > 1) i = 0;
-                number[i] = Arg;
-                i = i + 1;
-        }
+            
+            temp = temp + buttonValue;
+            Debug.Log(buttonValue);
+            Debug.Log(temp);
 
+        }
+        
         else
         {
             switch(buttonValue)
             {
                 case "+":
                     operatorSymbol = buttonValue;
+                    double.TryParse(temp, out temp1);
+                    number[0] = temp1;
+                    temp = "";
                     break;
                 case "-":
                     operatorSymbol = buttonValue;
+                    double.TryParse(temp, out temp1);
+                    number[0] = temp1;
+                    temp = "";
                     break;
                 case "x":
                     operatorSymbol = buttonValue;
+                    double.TryParse(temp, out temp1);
+                    number[0] = temp1;
+                    temp = "";
                     break;
                 case "/":
                     operatorSymbol = buttonValue;
+                    double.TryParse(temp, out temp1);
+                    number[0] = temp1;
+                    temp = "";
                     break;
 
                 case "=":
                    switch(operatorSymbol)
                    {
                         case "+":
+                            double.TryParse(temp, out temp2);
+                            number[1] = temp2;
                             resultado = number[0] + number[1];
                             break;
                         case "-":
+                            double.TryParse(temp, out temp2);
+                            number[1] = temp2;
                             resultado = number[0] - number[1];
                             break;
                         case "x":
+                            double.TryParse(temp, out temp2);
+                            number[1] = temp2;
                             resultado = number[0] * number[1];
                             break;
                         case "/":
+                            double.TryParse(temp, out temp2);
+                            number[1] = temp2;
                             resultado = number[0] / number[1];
                             break;
                    }

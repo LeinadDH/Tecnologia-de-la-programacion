@@ -18,7 +18,6 @@ public class Calculadora : MonoBehaviour
     string temp = "";
     double Arg;
     double temp1, temp2;
-    bool num1 = true;
 
     public void Buttons()
     {
@@ -101,7 +100,6 @@ public class Calculadora : MonoBehaviour
 
                     DisplayResultado = true;
                     InputString = resultado.ToString();
-                    number = new double[2];
                     break;
 
             }

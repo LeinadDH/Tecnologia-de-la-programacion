@@ -12,7 +12,6 @@ public class Calculadora : MonoBehaviour
     string InputString;
     double[] number = new double[2];
     string operatorSymbol;
-    int i = 0;
     double resultado;
     bool DisplayResultado = false;
     string temp = "";
@@ -80,21 +79,25 @@ public class Calculadora : MonoBehaviour
                             double.TryParse(temp, out temp2);
                             number[1] = temp2;
                             resultado = number[0] + number[1];
+                            temp = "";
                             break;
                         case "-":
                             double.TryParse(temp, out temp2);
                             number[1] = temp2;
                             resultado = number[0] - number[1];
+                            temp = "";
                             break;
                         case "x":
                             double.TryParse(temp, out temp2);
                             number[1] = temp2;
                             resultado = number[0] * number[1];
+                            temp = "";
                             break;
                         case "/":
                             double.TryParse(temp, out temp2);
                             number[1] = temp2;
                             resultado = number[0] / number[1];
+                            temp = "";
                             break;
                    }
 

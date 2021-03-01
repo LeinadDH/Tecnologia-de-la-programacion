@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class DiceGame : MonoBehaviour
 {
-    private int Dice1;
-    private int Dice2;
-    private int Dice3;
+    private int dice1;
+    private int dice2;
+    private int dice3;
 
     public void RollDice()
     {
-        Dice1 = Random.Range(1, 6);
-        Dice2 = Random.Range(1, 6);
-        Dice3 = Random.Range(1, 6);
+        dice1 = Random.Range(1, 7);
+        dice2 = Random.Range(1, 7);
+        dice3 = Random.Range(1, 7);
 
-        if (Dice1 == Dice2 && Dice1 == Dice3)
+        if ((dice1 == dice2) && (dice1 == dice3))
         {
             Debug.Log("ganaste");
         }
 
-        if (Dice1 != Dice2 || Dice1 != Dice3)
+        if ((dice1 != dice2) || (dice1 != dice3))
         {
             Debug.Log("perdiste");
         }

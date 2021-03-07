@@ -1,27 +1,27 @@
 using UnityEngine;
 public class CheatDicePair : Dice{
 
-    public int rollResult = 1;
+    private int rollResultPair = 1;
 
     public void Greetings()
     {
         Debug.Log("Hola, soy un dado cargado");
     }
 
-    public void reRoll(){
+    public void reRollPair(){
 
-        if (rollResult == 1 || rollResult == 3 || rollResult == 5 || rollResult == 7 || rollResult == 9)
+        if (rollResultPair == 1 || rollResultPair == 3 || rollResultPair == 5 || rollResultPair == 7 || rollResultPair == 9)
         {
-            rollResult = Random.Range(1, 11);
+            rollResultPair = Random.Range(1, 11);
+            reRollPair();
         }
 
-        if (rollResult == 2 || rollResult == 4 || rollResult == 6 || rollResult == 8 || rollResult == 10)
+        else if (rollResultPair == 2 || rollResultPair == 4 || rollResultPair == 6 || rollResultPair == 8 || rollResultPair == 10)
         {
-            Debug.Log("El resultado del dado cargado par es: " + rollResult);
-            rollResult = Random.Range(1, 11);
+            Debug.Log("El resultado del dado cargado (par) es: " + rollResultPair);
+            rollResultPair = Random.Range(1, 11);
         }
 
     }
-
 
 }

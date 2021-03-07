@@ -7,10 +7,6 @@ public class Dice{
     public int numberOfEdges;
     private string color;
     private string material;
-    public float sizeX;
-    public bool available = false;
-    private float radius;
-    static public int countDice = 10;
 
     // Constructors
     public Dice(int anumberOfFaces, int anumberOfEdges, string acolor, string amaterial)
@@ -19,7 +15,6 @@ public class Dice{
         numberOfEdges = anumberOfEdges;
         color = acolor;
         material = amaterial;
-        countDice++;
     }
 
     public Dice()
@@ -44,7 +39,7 @@ public class Dice{
         get { return color; }
         set 
         { 
-            if(value == "green" | value == "red")
+            if(value == "green" || value == "red" || value == "blue")
             {
                 color = value;    
             }

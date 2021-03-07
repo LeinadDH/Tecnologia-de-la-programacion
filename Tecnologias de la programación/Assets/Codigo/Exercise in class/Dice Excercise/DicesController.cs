@@ -10,7 +10,8 @@ public class DicesController : MonoBehaviour
     Dice dice1 = new Dice();
     Dice dice6 = new Dice(6);
 
-    CheatDicePair crookedDice = new CheatDicePair();
+    CheatDicePair crookedDicePair = new CheatDicePair();
+    CheatDiceOdd crookedDiceOdd = new CheatDiceOdd();
  
 
 
@@ -22,19 +23,30 @@ public class DicesController : MonoBehaviour
     Debug.Log("Color dado madera: " + woodDice.Color);
     woodDice.Color = "red";
     Debug.Log("Color dado madera: " + woodDice.Color);
-    Debug.Log("Hay un total de " + Dice.countDice + " dados");
 
-    crookedDice.Greetings();
-    crookedDice.helloDice();
-
-    
-
+    crookedDicePair.Greetings();
+    crookedDicePair.helloDice();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        crookedDice.reRoll();    
+          
+    }
+
+    public void RollPairDice()
+    {
+        crookedDicePair.reRollPair();
+    }
+
+    public void RollOddDice()
+    {
+        crookedDiceOdd.reRollOdd();
+    }
+
+    public void InformationOddDice()
+    {
+        crookedDiceOdd.InformationOddDice();
     }
 }

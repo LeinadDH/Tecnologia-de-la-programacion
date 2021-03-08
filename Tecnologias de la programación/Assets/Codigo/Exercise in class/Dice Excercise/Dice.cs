@@ -3,8 +3,8 @@
 public class Dice{
 
     // Atributes
-    public int numberOfFaces;
-    public int numberOfEdges;
+    private int numberOfFaces;
+    private int numberOfEdges;
     private string color;
     private string material;
 
@@ -47,6 +47,54 @@ public class Dice{
             {
                 color = "NA";
             }             
+        }
+    }
+
+    public int NumberOfFaces
+    {
+        get { return numberOfFaces; }
+        set
+        {
+            if(value == 10 || value == 6)
+            {
+                numberOfFaces = value;
+            }
+            else
+            {
+                numberOfFaces = 0;
+            }
+        }
+    }
+
+    public int NumberOfEdges
+    {
+        get { return numberOfEdges; }
+        set
+        {
+            if (value == 20 || value == 8)
+            {
+                numberOfEdges = value;
+            }
+            else
+            {
+                numberOfEdges = 0;
+            }
+        }
+    }
+
+    public string Material
+    {
+        get { return material; }
+        set
+        {
+            if (value == "plastic" || value == "wood" || value == "glass")
+            {
+                material = value;
+            }
+            else
+            {
+                material = "NA";
+            }
         }
     }
 

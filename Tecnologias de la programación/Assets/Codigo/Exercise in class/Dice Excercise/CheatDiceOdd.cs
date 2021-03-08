@@ -3,8 +3,14 @@ public class CheatDiceOdd : Dice
 {
 
     private int rollResultOdd = 1;
+    private string typeOfDice;
 
-    Dice oddDice = new Dice(10, 10, "blue", "plastic");
+    Dice oddDice = new Dice(10, 20, "blue", "plastic");
+
+    public CheatDiceOdd(string atypeOfDice)
+    {
+        typeOfDice = atypeOfDice;
+    }
 
     public void Greetings()
     {
@@ -28,9 +34,28 @@ public class CheatDiceOdd : Dice
 
     }
 
-    public void InformationOddDice()
+    public void informationOddDice()
     {
+        Debug.Log("El numero de caras del dado cargado (Impar) es: " + oddDice.NumberOfFaces);
+        Debug.Log("El numero de vertices del dado cargado (Impar) es: " + oddDice.NumberOfEdges);
         Debug.Log("El color del dado cargado (Impar) es: " + oddDice.Color);
+        Debug.Log("El material del dado cargado (Impar) es: " + oddDice.Material);
+    }
+
+    public string TypeOfDice
+    {
+        get { return typeOfDice; }
+        set
+        {
+            if (value == "odd dice")
+            {
+                typeOfDice = value;
+            }
+            else
+            {
+                typeOfDice = "NA";
+            }
+        }
     }
 
 }

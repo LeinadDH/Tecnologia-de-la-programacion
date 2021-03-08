@@ -2,6 +2,14 @@ using UnityEngine;
 public class CheatDicePair : Dice{
 
     private int rollResultPair = 1;
+    private string typeOfDice;
+
+    Dice pairDice = new Dice(10, 20, "red", "glass");
+
+    public CheatDicePair(string atypeOfDice)
+    {
+        typeOfDice = atypeOfDice;
+    }
 
     public void Greetings()
     {
@@ -22,6 +30,30 @@ public class CheatDicePair : Dice{
             rollResultPair = Random.Range(1, 11);
         }
 
+    }
+
+    public void informationPairDice()
+    {
+        Debug.Log("El numero de caras del dado cargado (Par) es: " + pairDice.NumberOfFaces);
+        Debug.Log("El numero de vertices del dado cargado (Par) es: " + pairDice.NumberOfEdges);
+        Debug.Log("El color del dado cargado (Par) es: " + pairDice.Color);
+        Debug.Log("El material del dado cargado (Par) es: " + pairDice.Material);
+    }
+
+    public string TypeOfDice
+    {
+        get { return typeOfDice; }
+        set
+        {
+            if (value == "pair dice")
+            {
+                typeOfDice = value;
+            }
+            else
+            {
+                typeOfDice = "NA";
+            }
+        }
     }
 
 }
